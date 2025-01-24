@@ -29,7 +29,8 @@ class RUMCommandTests: XCTestCase {
             time: .mockAny(),
             error: SwiftError(),
             source: .source,
-            attributes: [:]
+            attributes: [:],
+            completionHandler: NOPCompletionHandler
         )
 
         XCTAssertEqual(command.type, "SwiftError")
@@ -40,7 +41,8 @@ class RUMCommandTests: XCTestCase {
             time: .mockAny(),
             error: SwiftEnumeratedError.errorLabel,
             source: .source,
-            attributes: [:]
+            attributes: [:],
+            completionHandler: NOPCompletionHandler
         )
 
         XCTAssertEqual(command.type, "SwiftEnumeratedError")
@@ -51,7 +53,8 @@ class RUMCommandTests: XCTestCase {
             time: .mockAny(),
             error: nsError,
             source: .source,
-            attributes: [:]
+            attributes: [:],
+            completionHandler: NOPCompletionHandler
         )
 
         XCTAssertEqual(command.type, "custom-domain - 10")
