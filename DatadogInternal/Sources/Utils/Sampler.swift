@@ -12,6 +12,9 @@ public typealias SampleRate = Float
 
 /// Protocol for determining sampling decisions.
 public protocol Sampling {
+    /// Value between `0.0` and `100.0`, where `0.0` means everything is dropped and `100.0` means everything is kept.
+    var samplingRate: SampleRate { get }
+
     /// Determines whether sampling should be performed.
     ///
     /// - Returns: A boolean value indicating whether sampling should occur.
